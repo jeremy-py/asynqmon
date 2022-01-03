@@ -220,7 +220,7 @@ function TaskDetailsView(props: Props) {
               </div>
               <div className={classes.infoRow}>
                 <Typography variant="subtitle2" className={classes.infoKeyCell}>
-                  Payload:{" "}
+                  Payloadd:{" "}
                 </Typography>
                 <div className={classes.infoValueCell}>
                   {taskInfo?.payload && (
@@ -233,7 +233,7 @@ function TaskDetailsView(props: Props) {
                   )}
                 </div>
               </div>
-              /* NEW - BEGIN */
+              // NEW - BEGIN 
               <div className={classes.infoRow}>
                       <Typography
                         variant="subtitle2"
@@ -250,7 +250,7 @@ function TaskDetailsView(props: Props) {
                         </SyntaxHighlighter>
                       </div>
                     </div>
-              /* NEW - END */
+              // NEW - END
               {
                 /* Completed Task Only */ taskInfo?.state === "completed" && (
                   <>
