@@ -233,6 +233,24 @@ function TaskDetailsView(props: Props) {
                   )}
                 </div>
               </div>
+              /* NEW - BEGIN */
+              <div className={classes.infoRow}>
+                      <Typography
+                        variant="subtitle2"
+                        className={classes.infoKeyCell}
+                      >
+                        Result:{" "}
+                      </Typography>
+                      <div className={classes.infoValueCell}>
+                        <SyntaxHighlighter
+                          language="json"
+                          customStyle={{ margin: 0, maxWidth: 400 }}
+                        >
+                          {prettifyPayload(taskInfo.result)}
+                        </SyntaxHighlighter>
+                      </div>
+                    </div>
+              /* NEW - END */
               {
                 /* Completed Task Only */ taskInfo?.state === "completed" && (
                   <>
