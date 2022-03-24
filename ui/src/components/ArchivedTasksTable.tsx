@@ -352,7 +352,7 @@ function Row(props: RowProps) {
           language="json"
           customStyle={{ margin: 0, maxWidth: 400 }}
         >
-          {prettifyPayload(task.payload)}
+          hidden
         </SyntaxHighlighter>
       </TableCell>
       <TableCell>{timeAgo(task.last_failed_at)}</TableCell>

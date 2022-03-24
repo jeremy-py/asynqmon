@@ -1,6 +1,6 @@
 {
-  "name": "Asynq Monitoring",
-  "short_name": "Asynqmon",
+  "name": "iWorkFlow Inspector",
+  "short_name": "Inspector",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

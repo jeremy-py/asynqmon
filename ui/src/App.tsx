@@ -182,7 +182,7 @@ function App(props: ConnectedProps<typeof connector>) {
                 className={classes.title}
                 color="textPrimary"
               >
-                Asynq Monitoring
+                iWorkFlow - Inspector
               </Typography>
             </Toolbar>
           </AppBar>

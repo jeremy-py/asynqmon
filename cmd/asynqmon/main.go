@@ -14,7 +14,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/hibiken/asynq"
 	"github.com/hibiken/asynq/x/metrics"
-	"github.com/hibiken/asynqmon"
+	"github.com/jeremy-py/asynqmon"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/rs/cors"
@@ -23,6 +23,7 @@ import (
 // Command-line flags
 var (
 	flagPort                  int
+	flagRootPath              string
 	flagRedisAddr             string
 	flagRedisDB               int
 	flagRedisPassword         string
@@ -38,6 +39,7 @@ var (
 
 func init() {
 	flag.IntVar(&flagPort, "port", getEnvOrDefaultInt("PORT", 8080), "port number to use for web ui server")
+	flag.StringVar(&flagRootPath, "path", getEnvDefaultString("ROOT_PATH", "/"), "root path")
 	flag.StringVar(&flagRedisAddr, "redis-addr", getEnvDefaultString("REDIS_ADDR", "127.0.0.1:6379"), "address of redis server to connect to")
 	flag.IntVar(&flagRedisDB, "redis-db", getEnvOrDefaultInt("REDIS_DB", 0), "redis database number")
 	flag.StringVar(&flagRedisPassword, "redis-password", getEnvDefaultString("REDIS_PASSWORD", ""), "password to use when connecting to redis server")
@@ -114,6 +116,7 @@ func main() {
 		PayloadFormatter:  asynqmon.PayloadFormatterFunc(formatPayload),
 		ResultFormatter:   asynqmon.ResultFormatterFunc(formatResult),
 		PrometheusAddress: flagPrometheusServerAddr,
+		RootPath:          flagRootPath,
 	})
 	defer h.Close()
 

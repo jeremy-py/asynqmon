@@ -49,10 +49,10 @@ function SchedulersView(props: Props) {
   usePolling(listSchedulerEntriesAsync, pollInterval);
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="xl" className={classes.container}>
       <Grid container spacing={3}>
         {props.error === "" ? (
-          <Grid item xs={12}>
+          <Grid item xl={12}>
             <Paper className={classes.paper} variant="outlined">
               <Typography variant="h6" className={classes.heading}>
                 Scheduler Entries
@@ -61,7 +61,7 @@ function SchedulersView(props: Props) {
             </Paper>
           </Grid>
         ) : (
-          <Grid item xs={12}>
+          <Grid item xl={12}>
             <Alert severity="error">
               <AlertTitle>Error</AlertTitle>
               Could not retrieve scheduler entries live data —{" "}

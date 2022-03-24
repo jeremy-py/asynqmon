@@ -327,7 +327,7 @@ function Row(props: RowProps) {
           language="json"
           customStyle={{ margin: 0, maxWidth: 400 }}
         >
-          {prettifyPayload(task.payload)}
+          hidden
         </SyntaxHighlighter>
       </TableCell>
       <TableCell>{timeAgo(task.completed_at)}</TableCell>
@@ -336,7 +336,7 @@ function Row(props: RowProps) {
           language="json"
           customStyle={{ margin: 0, maxWidth: 400 }}
         >
-          {prettifyPayload(task.result)}
+          hidden
         </SyntaxHighlighter>
       </TableCell>
       <TableCell>
